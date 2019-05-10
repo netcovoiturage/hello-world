@@ -1,5 +1,5 @@
 # hello-world
-just for fun
-try to handle GH flow.
-start to lerning hot to work with git.
-do some tutorials.
+
+Try to handle GH flow.
+Start to study hot to work with git.
+Do some tutorials.
