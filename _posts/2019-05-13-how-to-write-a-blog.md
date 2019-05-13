@@ -1,6 +1,4 @@
 ---
-published: true
-layout: post
 title:  "Welcome to vaal Jekyll!"
 ---
 
