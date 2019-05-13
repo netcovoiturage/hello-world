@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Welcome to vaal Jekyll!"
 ---
 
 # Welcome
