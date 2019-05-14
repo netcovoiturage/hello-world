@@ -27,8 +27,8 @@ As Kanye West said:
 ## posts
 <ul>
   {% for post in site.posts %}
-    <br>{{post}}</br>
-    <br>{{post.url}}</br>
+    <br>{{ post.url }}</br> 
+    <br>{{ site.url }}</br>
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
