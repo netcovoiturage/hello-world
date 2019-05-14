@@ -1,3 +1,7 @@
+---
+title:  "unix and vim command for every day"
+---
+
 ### highlighting
     
 ```
@@ -12,4 +16,4 @@
 
 #The following counts the number of occurrences in the lines in the most recent visual selection.
 :'<,'>s/pattern//gn
-``` 
+```
