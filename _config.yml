@@ -1,6 +1,7 @@
 theme: jekyll-theme-tactile
 title: Welcome to the Vadim's homepage!
 description: Feel free to bookmark this to keep an eye on my project updates.
+siteurl: 'http://netcovoiturage.github.io/hello-world/'
 readme_index:
   enabled:          true
   remove_originals: false
