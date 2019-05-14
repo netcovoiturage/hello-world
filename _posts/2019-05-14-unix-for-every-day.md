@@ -1,10 +1,19 @@
 ---
-title:  "unix and vim command for every day"
+title:  "vim command for every day"
 ---
+   
+```Vim script
+#The substitute command can be used to insert (or replace) text. Some examples:
 
-### highlighting
-    
-```
+#Insert "new text " at the beginning of the line.
+:s/^/new text/
+
+#Append "new text" to the end of the line.
+:s/$/ new text/	
+
+#Replace each "green" with "bright green" in the line.
+:s/green/bright &/g	
+
 #To count the number of matches of a pattern, use the substitute command with the n flag. The following shows the number of times that pattern matches text in the current buffer:
 :%s/pattern//gn
 
