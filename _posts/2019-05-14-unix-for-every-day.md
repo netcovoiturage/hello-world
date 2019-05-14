@@ -2,8 +2,6 @@
 title:  "vim command for every day"
 ---
    
-```
-
 #The substitute command can be used to insert (or replace) text and  count it. Here some examples:
 
 **Insert "new text " at the beginning of the line.**
