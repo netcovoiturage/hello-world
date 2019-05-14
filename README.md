@@ -30,7 +30,7 @@ As Kanye West said:
     <br>{{ post.url }}</br> 
     <br>{{ site.url }}</br>
     <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a href="/hello-world{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
 </ul>
