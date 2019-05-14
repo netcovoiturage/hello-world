@@ -9,7 +9,7 @@ title:  "vim command for every day"
 :s/^/new text/
 
 #Append "new text" to the end of the line.
-:s/$/ new text/	
+:s/$/new text/	
 
 #Replace each "green" with "bright green" in the line.
 :s/green/bright &/g	
