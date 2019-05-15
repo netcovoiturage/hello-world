@@ -1,22 +1,47 @@
 ---
-title:  "vim command for every day"
+title: vim command for every day
+published: true
 ---
    
-#### The substitute command can be used to insert (or replace) text and  count it. Here some examples:
+### Find 
 
-Insert "new text" at the beginning of the line.
-`:s/^/new text/`
+Find all files in the logs and remove it
+`find . | grep logs | grep -e .zip | xargs rm`
+ 
+Search all files from /root that contains the string "Linux", case insensitive:
+`find  /root -type f -iname "*linux*"`
+Search all directories from /root that contains the string "Linux", case insensitive:
+`find  /root -type d -iname "*linux*"`
 
-Append "new text" to the end of the line.
-`:s/$/new text/`	
+### Grep
 
-Replace each "green" with "bright green" in the line.
-`:s/green/bright &/g`	
+Grep gz files
+`find -iname "*.gz" -print0 | xargs -0 zgrep "321543314004027"`
 
-To count the number of matches of a pattern, use the substitute command with the n flag. The following shows the number of times that pattern matches text in the current buffer: `:%s/pattern//gn`
+`grep -rnw -e "fcd0d898-584d-11e7-a96b-0050568b7c54"`
+Grep sock or ITEM
+`grep -E "(sock|ITEM)"`
+Grep process ttyv and exclude grep process from result
+`ps -afx | grep ttyv | grep -v grep`
 
-Omit g to display the number of lines where the pattern matches: `:%s/pattern//n`
+Show the bigest 20 files in the directory
+`du -hsx * | sort -rh | head -20`
+Show diskspace
+`df -h` 
 
-To restrict the count to a region of the text, specify a range instead of % (% means all lines). For example, the following counts the number of occurrences in lines 10 to 50 inclusive: `:10,50s/pattern//gn`
+Отсортировать процессы по потреблению памяти
+`ps aux --sort=%mem`
+Запустить в бэкенде процем без логов
+`nohup ./run-psdb.sh >/dev/null 2>&1 &`
 
-The following counts the number of occurrences in the lines in the most recent visual selection: `:'<,'>s/pattern//gn`
+Hot to clean file
+`truncate -s 0 filename`
+`>filename`
+
+How to copy files by ssh
+scp <source> <destination>
+To copy a file from B to A while logged into B:
+`scp /path/to/file username@a:/path/to/destination`
+
+To copy a file from B to A while logged 
+`scp username@b:/path/to/file /path/to/destination`
