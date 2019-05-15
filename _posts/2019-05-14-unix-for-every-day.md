@@ -1,6 +1,5 @@
 ---
 published: true
-title: Unix usefull commands
 ---
    
 ### Find 
