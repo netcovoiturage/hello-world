@@ -1,5 +1,5 @@
 ---
-title: vim command for every day
+title: ''
 published: true
 ---
    
