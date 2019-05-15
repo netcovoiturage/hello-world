@@ -16,19 +16,11 @@ function fancyAlert(arg) {
 }
 ``` 
     
-Try to handle GH flow.
-Start to study hot to work with git.
-Do some tutorials.
-
-As Kanye West said:
-> We're living the future so
-> the present is our past.
-
 ## posts
 <ul>
   {% for post in site.posts %}
-    <br>{{ post.url }}</br> 
-    <br>{{ site.url }}</br>
+    <li>{{ post.url }}</li> 
+    <li>{{ site.url }}</li>
     <li>
       <a href="/hello-world{{ post.url }}">{{ post.title }}</a>
     </li>
