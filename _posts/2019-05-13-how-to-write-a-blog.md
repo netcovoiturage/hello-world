@@ -1,5 +1,5 @@
 ---
-title:  "Welcome to vaal Jekyll!"
+title:  "Welcome to first vaal post in the Jekyll!"
 ---
 
 # Welcome
