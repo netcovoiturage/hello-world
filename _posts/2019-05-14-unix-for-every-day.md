@@ -35,13 +35,13 @@ Show diskspace
 `nohup ./run-psdb.sh >/dev/null 2>&1 &`
 
 Hot to clean file
-`truncate -s 0 filename`
-`>filename`
+- `truncate -s 0 filename`
+- `>filename`
 
 How to copy files by ssh
 scp <source> <destination>
-To copy a file from B to A while logged into B:
-`scp /path/to/file username@a:/path/to/destination`
 
-To copy a file from B to A while logged 
-`scp username@b:/path/to/file /path/to/destination`
+To copy a file from B to A while logged: 
+- `scp username@b:/path/to/file /path/to/destination`
+To copy a file from B to A while logged into B:
+- `scp /path/to/file username@a:/path/to/destination`
