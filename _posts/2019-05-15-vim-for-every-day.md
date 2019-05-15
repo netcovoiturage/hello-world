@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ### Basic search and replace
 
@@ -48,4 +48,4 @@ Replace each "green" with "bright green" in the line.
 
 `:10,50s/pattern//gn` To restrict the count to a region of the text, specify a range instead of % (% means all lines). For example, the above counts the number of occurrences in lines 10 to 50 inclusive. 
 
-`:'<,'>s/pattern//gn` Counts the number of occurrences in the lines in the most recent visual selection. 
+`:'<,'>s/pattern//gn` Counts the number of occurrences in the lines in the most recent visual selection.
