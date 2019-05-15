@@ -29,6 +29,35 @@ Change each 'foo' (case sensitive due to the I flag) to 'bar'; ask for confirmat
 `:%s/foo\C/bar/gc` is the same because \C makes the search case sensitive.
 This may be wanted after using :set ignorecase to make searches case insensitive.
 
+#### Search range:
+
+`:s/foo/bar/g`	Change each 'foo' to 'bar' in the current line.
+`:%s/foo/bar/g`	Change each 'foo' to 'bar' in all the lines.
+`:5,12s/foo/bar/g`	Change each 'foo' to 'bar' for all lines from line 5 to line 12 (inclusive).
+`:'a,'bs/foo/bar/g`	Change each 'foo' to 'bar' for all lines from mark a to mark b inclusive (see Note below).
+`:'<,'>s/foo/bar/g`	When compiled with +visual, change each 'foo' to 'bar' for all lines within a visual selection. Vim automatically appends the visual selection range ('<,'>) for any ex command when you select an area and enter :. Also, see Note below.
+`:.,$s/foo/bar/g`	Change each 'foo' to 'bar' for all lines from the current line (.) to the last line ($) inclusive.
+`:.,+2s/foo/bar/g`	Change each 'foo' to 'bar' for the current line (.) and the two next lines (+2).
+`:g/^baz/s/foo/bar/g`	Change each 'foo' to 'bar' in each line starting with 'baz'.
+Note: As of Vim 7.3, substitutions applied to a range defined by marks or a visual selection (which uses a special type of marks '< and '>) are not bounded by the column position of the marks by default. Instead, Vim applies the substitution to the entire line on which each mark appears unless the \%V atom is used in the pattern like: `:'<,'>s/\%Vfoo/bar/g`.
+
+When searching:
+
+., *, \, [, ^, and $ are metacharacters.
++, ?, |, &, {, (, and ) must be escaped to use their special function.
+\/ is / (use backslash + forward slash to search for forward slash)
+\t is tab, \s is whitespace (space or tab)
+\n is newline, \r is CR (carriage return = Ctrl-M = ^M)
+After an opening [, everything until the next closing ] specifies a /collection. Character ranges can be represented with a -; for example a letter a, b, c, or the number 1 can be matched with [1a-c]. Negate the collection with [^ instead of [; for example [^1a-c] matches any character except a, b, c, or 1.
+\{#\} is used for repetition. /foo.\{2\} will match foo and the two following characters. The \ is not required on the closing } so /foo.\{2} will do the same thing.
+\(foo\) makes a backreference to foo. Parenthesis without escapes are literally matched. Here the \ is required for the closing \).
+When replacing:
+
+`\r` is newline, `\n` is a null byte (0x00).
+`\&` is ampersand (`&` is the text that matches the search pattern).
+`\0` inserts the text matched by the entire pattern
+`\1` inserts the text of the first backreference. `\2` inserts the second backreference, and so on.
+
 ### The substitute command can be used to insert (or replace) text. Here some examples:
 
 `:s/^/new text/`
